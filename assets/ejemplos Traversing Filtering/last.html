@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resaltar último resultado</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .highlight {
+      background-color: lightgreen;
+      border: 2px solid red;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1><center>Ejemplo Funcion Last()</center></h1>
+  <h2>Mejores jugadores del mundo</h2>
+  <ul id="jugadores">
+    <li>Lionel Messi</li>
+    <li>Cristiano Ronaldo</li>
+    <li>Neymar Jr.</li>
+    <li>Kevin De Bruyne</li>
+    <li>Robert Lewandowski</li>
+    <li>Kylian Mbappé</li>
+    <li>Virgil van Dijk</li>
+  </ul>
+
+  <button id="resaltar-btn">Implementar la funcion last</button>
+
+  <script>
+    $(document).ready(function() {
+      $('#resaltar-btn').click(function() {
+        $('#jugadores li').removeClass('highlight');
+        $('#jugadores li').last().addClass('highlight');
+      });
+    });
+  </script>
+</body>
+</html>

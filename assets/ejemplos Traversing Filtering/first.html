@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resaltar el primer elemento de la lista</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .highlight {
+      background-color: lightblue;
+      border: none;
+      font-size: inherit;
+      padding: 0;
+      color: red; /* Agregamos esta línea para cambiar el color de las letras a rojo */
+    }
+
+    .highlight-border {
+      border: 2px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <h1><center>Ejemplo funcion First()</center> </h1>
+  <h2>Lista de cantantes </h2>
+  <ul id="cantantes">
+    <li>Taylor Swift</li>
+    <li>Beyoncé</li>
+    <li>Michael Jackson</li>
+    <li>Adele</li>
+    <li>Elvis Presley</li>
+    <li>Whitney Houston</li>
+    <li>Bob Dylan</li>
+  </ul>
+  <button id="resaltar">Implementar funcion First</button>
+
+  <script>
+    $(document).ready(function() {
+      $('#resaltar').click(function() {
+        $('#cantantes li').first().wrapInner('<span class="highlight"></span>');
+        $('#cantantes li .highlight').addClass('highlight-border');
+      });
+    });
+  </script>
+</body>
+</html>
+</html>

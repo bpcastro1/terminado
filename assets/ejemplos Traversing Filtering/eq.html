@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Películas más taquilleras</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1><center>Ejemplo funcion Eq()</center></h1>
+  <h2>Películas más taquilleras de la historia</h2>
+  <ul id="peliculas">
+    <li>Avengers: Endgame</li>
+    <li>Avatar</li>
+    <li>Titanic</li>
+    <li>Star Wars: El despertar de la Fuerza</li>
+    <li>Avengers: Infinity War</li>
+    <li>Jurassic World</li>
+  </ul>
+
+  <label for="numero">Ingresa el número de película (1-6):</label>
+  <input type="text" id="numero">
+  <button id="resaltar">Resaltar</button>
+
+  <script>
+    $(document).ready(function() {
+      $('#resaltar').click(function() {
+        var numero = parseInt($('#numero').val());
+        if (numero >= 1 && numero <= 6) {
+          $('#peliculas li').eq(numero - 1).css('color', 'red');
+        } else {
+          alert('Ingresa un número válido (1-6)');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

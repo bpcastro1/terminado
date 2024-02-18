@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mejores actrices actuales</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .excelente {
+      font-weight: bold;
+    }
+    .regular {
+      font-style: italic;
+    }
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1><center>Ejemplo Funcion Not()</center></h1>
+  <h2>Mejores actrices actuales</h2>
+  <ul id="actrices">
+    <li class="excelente">Meryl Streep</li>
+    <li class="regular">Cate Blanchett</li>
+    <li class="excelente">Viola Davis</li>
+    <li class="regular">Natalie Portman</li>
+    <li class="excelente">Julianne Moore</li>
+  </ul>
+
+  <label for="clase">Ingresa el nombre de una clase (excelente o regular):</label>
+  <input type="text" id="clase">
+  <button id="ejecutar">Ejecutar</button>
+
+  <script>
+    $(document).ready(function() {
+      $('#ejecutar').click(function() {
+        var clase = $('#clase').val();
+        $('#actrices li').removeClass('oculto');
+        $('#actrices li:not(.' + clase + ')').addClass('oculto');
+      });
+    });
+  </script>
+</body>
+</html>

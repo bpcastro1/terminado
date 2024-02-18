@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deportes más practicados</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .resaltado {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1><center>Ejemplo Funcion Filter()</center></h1>
+  <h2>Deportes mas practicados </h2>
+  <ul id="deportes">
+    <li class="bueno">Futbol</li>
+    <li class="malo">Cricket</li>
+    <li class="regular">Tenis</li>
+    <li class="bueno">Baloncesto</li>
+    <li class="malo">Golf</li>
+  </ul>
+
+  <label for="clase">Ingresa una clase de deporte (bueno, malo, regular):</label>
+  <input type="text" id="clase">
+  <button id="filtrar">Filtrar</button>
+
+  <h2>Resultado:</h2>
+  <ul id="resultado"></ul>
+
+  <script>
+    $(document).ready(function() {
+      $('#filtrar').click(function() {
+        var clase = $('#clase').val();
+        $('#deportes li').removeClass('resaltado');
+        var elementosFiltrados = $('#deportes li').filter('.' + clase);
+        elementosFiltrados.addClass('resaltado');
+        mostrarResultado(elementosFiltrados);
+      });
+
+      function mostrarResultado(elementos) {
+        var resultado = $('#resultado');
+        resultado.empty();
+        elementos.each(function() {
+          resultado.append('<li>' + $(this).text() + '</li>');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
